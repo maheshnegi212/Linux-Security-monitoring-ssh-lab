@@ -1,0 +1,46 @@
+LINUX SECURITY MONITORING & SSH AUTHENTICATION INVESTIGATION LAB
+
+PROJECT OVERVIEW
+
+This project demonstrates Linux security monitoring and SSH authentication investigation using an Ubuntu virtual machine.
+
+The objective is to identify successful and failed SSH login attempts, review authentication logs, and document the findings from a SOC analyst perspective.
+
+LAB ENVIRONMENT
+
+Operating System: Ubuntu 22.04.5 LTS
+Virtualization: VMware Workstation
+Hostname: mahesh-virtual-machine
+User Account: mahesh
+Log Source: /var/log/auth.log
+Service: OpenSSH
+INVESTIGATION TIMELINE
+
+October 8, 15:06:35
+Successful SSH authentication for user mahesh from 127.0.0.1.
+
+October 8, 15:08:48
+Failed SSH password authentication for user mahesh from 127.0.0.1.
+
+October 8, 15:08:58
+Failed SSH password authentication for user mahesh from 127.0.0.1.
+
+INVESTIGATION FINDINGS
+
+The authentication logs recorded both successful and failed SSH login events.
+
+The source IP address 127.0.0.1 is the localhost address, indicating activity originating from the same Ubuntu virtual machine.
+
+The failed logins were intentionally generated for this controlled lab. These events do not establish that an external attacker accessed the system.
+
+RECOMMENDATIONS
+
+1. Use strong, unique passwords.
+2. Prefer SSH key-based authentication where appropriate.
+3. Monitor authentication logs regularly.
+4. Investigate repeated failed login attempts.
+5. Restrict SSH access to trusted networks where possible.
+
+CONCLUSION
+
+This lab demonstrated how to generate controlled SSH authentication events, review Linux authentication logs, distinguish successful and failed login attempts, and document findings using a basic SOC investigation workflow.
